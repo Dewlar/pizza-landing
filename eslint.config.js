@@ -1,15 +1,15 @@
 // @ts-check
-const eslint = require("@eslint/js");
-const { defineConfig } = require("eslint/config");
-const tseslint = require("typescript-eslint");
-const angular = require("angular-eslint");
+const eslint = require('@eslint/js');
+const { defineConfig } = require('eslint/config');
+const tseslint = require('typescript-eslint');
+const angular = require('angular-eslint');
 const eslintConfigPrettier = require('eslint-config-prettier');
-const eslintPluginPrettier = require("eslint-plugin-prettier");
+const eslintPluginPrettier = require('eslint-plugin-prettier');
 
 module.exports = defineConfig([
   {
     ignores: ['.angular/**', '.nx/**', 'coverage/**', 'dist/**'],
-    files: ["**/*.ts"],
+    files: ['**/*.ts'],
     plugins: {
       prettier: eslintPluginPrettier,
     },
@@ -18,27 +18,27 @@ module.exports = defineConfig([
       tseslint.configs.recommended,
       tseslint.configs.stylistic,
       angular.configs.tsRecommended,
-      eslintConfigPrettier
+      eslintConfigPrettier,
     ],
     processor: angular.processInlineTemplates,
     rules: {
-      "@angular-eslint/directive-selector": [
-        "error",
+      '@angular-eslint/directive-selector': [
+        'error',
         {
-          type: "attribute",
-          prefix: "app",
-          style: "camelCase",
+          type: 'attribute',
+          prefix: 'app',
+          style: 'camelCase',
         },
       ],
-      "@angular-eslint/component-selector": [
-        "error",
+      '@angular-eslint/component-selector': [
+        'error',
         {
-          type: "element",
-          prefix: "app",
-          style: "kebab-case",
+          type: 'element',
+          prefix: 'app',
+          style: 'kebab-case',
         },
       ],
-      "prettier/prettier": "error",
+      'prettier/prettier': 'error',
       // Angular best practices
       '@angular-eslint/no-empty-lifecycle-method': 'warn',
       '@angular-eslint/prefer-on-push-component-change-detection': 'warn', //"off", 0, "warn", 1, "error", or 2
@@ -108,11 +108,8 @@ module.exports = defineConfig([
     },
   },
   {
-    files: ["**/*.html"],
-    extends: [
-      angular.configs.templateRecommended,
-      angular.configs.templateAccessibility,
-    ],
+    files: ['**/*.html'],
+    extends: [angular.configs.templateRecommended, angular.configs.templateAccessibility],
     rules: {
       // Angular template best practices
       '@angular-eslint/template/attributes-order': [
@@ -137,5 +134,5 @@ module.exports = defineConfig([
       '@angular-eslint/template/prefer-self-closing-tags': 'warn',
       '@angular-eslint/template/use-track-by-function': 'warn',
     },
-  }
+  },
 ]);
