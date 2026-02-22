@@ -1,0 +1,90 @@
+<header
+        class="w-full h-[100px] bg-white shadow-[0px_3px_13.8px_1.2px_rgba(152,152,152,0.2)]"
+>
+    <div
+            class="max-w-[1200px] mx-auto h-full flex items-center justify-between px-4 xl:px-0"
+    >
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+            <img
+                    ngSrc="/assets/pizza.png"
+                    alt="Pizza Cheff"
+                    class="h-[69px] w-auto"
+                    height="69" width="68"/>
+
+            <div class="flex flex-col pt-1 font-muller font-black">
+                <span class="text-2xl text-pizza-orange-light uppercase">Pizza</span>
+                <span class="text-2xl text-pizza-orange-light uppercase">Cheff</span>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="hidden md:flex flex-grow items-center justify-center gap-10">
+            <a routerLink=""
+               class="text-pizza-orange-dark font-muller font-normal hover:text-orange-400 transition-colors duration-200 cursor-pointer">
+                Пиццы
+            </a>
+            <a routerLink=""
+               class="text-pizza-orange-dark font-muller font-normal hover:text-orange-400 transition-colors duration-200 cursor-pointer">
+                Напитки
+            </a>
+            <a routerLink=""
+               class="text-pizza-orange-dark font-muller font-normal hover:text-orange-400 transition-colors duration-200 cursor-pointer">
+                Доставка и оплата
+            </a>
+            <a routerLink=""
+               class="text-pizza-orange-dark font-muller font-normal hover:text-orange-400 transition-colors duration-200 cursor-pointer">
+                Контакты
+            </a>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <p-button class="md:hidden" icon="pi pi-bars" (click)="visible = true"/>
+    </div>
+</header>
+
+<!-- Mobile menu -->
+<p-drawer position="right" styleClass="!w-full sm:!w-80 lg:!w-[30rem]" [(visible)]="visible">
+    <ng-template #header>
+        <span class="text-pizza-orange font-muller font-black text-xl uppercase">
+            Pizza Cheff
+        </span>
+    </ng-template>
+
+    <div class="overflow-y-auto">
+        <ul class="list-none p-4 m-0 overflow-hidden">
+            <li>
+                <a pRipple
+                   routerLink=""
+                   class="flex items-center cursor-pointer font-muller font-normal p-4 rounded-border text-pizza-orange-dark hover:text-pizza-dark-warm hover:bg-pizza-orange duration-150 transition-colors p-ripple">
+                    <i class="pi pi-thumbs-up mr-2"></i>
+                    <span class="font-medium">Пиццы</span>
+                </a>
+            </li>
+            <li>
+                <a pRipple
+                   routerLink=""
+                   class="flex items-center cursor-pointer font-muller font-normal p-4 rounded-border text-pizza-orange-dark hover:text-pizza-dark-warm hover:bg-pizza-orange duration-150 transition-colors p-ripple">
+                    <i class="pi pi-thumbs-up mr-2"></i>
+                    <span class="font-medium">Напитки</span>
+                </a>
+            </li>
+            <li>
+                <a pRipple
+                   routerLink=""
+                   class="flex items-center cursor-pointer font-muller font-normal p-4 rounded-border text-pizza-orange-dark hover:text-pizza-dark-warm hover:bg-pizza-orange duration-150 transition-colors p-ripple">
+                    <i class="pi pi-bitcoin mr-2"></i>
+                    <span class="font-medium">Доставка и оплата</span>
+                </a>
+            </li>
+            <li>
+                <a pRipple
+                   routerLink=""
+                   class="flex items-center cursor-pointer font-muller font-normal p-4 rounded-border text-pizza-orange-dark hover:text-pizza-dark-warm hover:bg-pizza-orange duration-150 transition-colors p-ripple">
+                    <i class="pi pi-book mr-2"></i>
+                    <span class="font-medium">Контакты</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</p-drawer>
