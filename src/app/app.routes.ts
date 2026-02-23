@@ -7,5 +7,5 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/pages/home-page/home-page.component').then((m) => m.HomePageComponent),
   },
-  { path: '**', redirectTo: 'schedule', pathMatch: 'full' },
+  { path: '**', redirectTo: 'pizza', pathMatch: 'full' },
 ];
