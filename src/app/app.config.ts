@@ -5,6 +5,7 @@ import { routes } from './app.routes';
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeuix/themes/aura';
 import { definePreset } from '@primeuix/themes';
+import { provideHttpClient } from '@angular/common/http';
 
 const PizzaTheme = definePreset(Aura, {
   primitive: {
@@ -50,5 +51,6 @@ export const appConfig: ApplicationConfig = {
     }),
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
+    provideHttpClient(),
   ],
 };
