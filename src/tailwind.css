@@ -1,11 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
 @import 'tailwindcss';
 @import 'tailwindcss-primeui';
 @import 'primeicons/primeicons.css';
-
-/*@import url("tailwindcss");*/
-/*@import url("tailwindcss-primeui");*/
-/*@import url("primeicons/primeicons.css");*/
 
 @font-face {
   font-family: Muller;
@@ -35,11 +30,8 @@
   font-style: normal;
 }
 
-.font-muller {
-  font-family: Muller, ui-sans-serif, system-ui, sans-serif;
-}
-
 @theme {
+  --font-muller: "Muller", ui-sans-serif, system-ui, sans-serif;
   /* Orange */
   --color-pizza-orange-light: rgb(255, 196, 104);
   --color-pizza-orange: rgb(255, 175, 24);
@@ -54,4 +46,8 @@
   --color-pizza-dark-warm: rgb(56, 36, 0);
   --color-pizza-dark-graphite: rgb(24, 26, 26);
   --color-pizza-dark-deep: rgb(2, 3, 3);
+
+  --text-pizza-h1: 1.875rem;
+  --text-pizza-h1--line-height: 1.2;
+  --text-pizza-h1--font-weight: 700;
 }
