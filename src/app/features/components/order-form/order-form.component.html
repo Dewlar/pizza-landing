@@ -1,0 +1,89 @@
+<section class="w-full py-16 md:pt-52 md:pb-24 overflow-x-hidden">
+  <div
+    class="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-8 px-4 xl:px-0 lg:grid-cols-[1fr_1.15fr_0.85fr]"
+  >
+    <!-- block -->
+    <div class="flex flex-col">
+      <h3 class="text-[35px] font-muller font-extrabold leading-[1.2] text-left text-pizza-orange">
+        Хватит думать!
+      </h3>
+      <h3
+        class="text-[35px] font-muller font-extrabold leading-[1.2] text-left text-pizza-brown-sand"
+      >
+        Доставим заказ за 30 минут!
+      </h3>
+      <p class="mt-14 font-muller font-normal leading-normal text-sm md:text-base text-pizza-brown">
+        Мы гарантированно доставим вашу пиццу за 30 минут с момента оформления заказа. Если мы
+        опоздаем даже на 1 минуту — вы получаете весь заказ бесплатно и ваучер на скидку на
+        следующий заказ. Мы гордимся нашим сервисом и сделаем всё, чтобы наш клиент был доволен и не
+        остался голодный!
+      </p>
+    </div>
+
+    <!-- block -->
+    <div class="flex flex-col w-full h-full items-center lg:items-end justify-end pb-2.5">
+      <form class="flex flex-col gap-6 w-full md:w-96 lg:w-80" [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+        <input
+          formControlName="name"
+          type="text"
+          placeholder="Ваше имя"
+          class="w-full border px-4 py-[15px] border-pizza-brown placeholder:text-pizza-brown outline-none"
+          [ngClass]="getControlClasses(orderForm.controls.name)"
+          (keydown)="$event.key === '.' ? $event.preventDefault() : null"
+        />
+        <input
+          formControlName="address"
+          type="text"
+          placeholder="Адрес доставки"
+          class="w-full border px-4 py-[15px] border-pizza-brown placeholder:text-pizza-brown outline-none"
+          [ngClass]="getControlClasses(orderForm.controls.address)"
+        />
+        <input
+          formControlName="phone"
+          type="tel"
+          mask="(000) 000-00-00"
+          prefix="+7 "
+          placeholder="Телефон"
+          class="w-full border px-4 py-[15px] border-pizza-brown placeholder:text-pizza-brown outline-none"
+          [dropSpecialCharacters]="false"
+          [showMaskTyped]="false"
+          [ngClass]="getControlClasses(orderForm.controls.phone)"
+        />
+        <button
+          type="submit"
+          class="bg-pizza-orange px-10 py-4 font-muller font-bold text-pizza-brown-warm transition-transform hover:scale-105 active:scale-95 cursor-pointer"
+        >
+          Оформить заказ
+        </button>
+      </form>
+    </div>
+
+    <!-- block image -->
+    <div class="relative hidden h-full lg:block">
+      <div
+        class="absolute pointer-events-none hidden select-none lg:block left-[14%] top-1/2 -translate-y-[55%] w-[125%] min-w-[300px]"
+      >
+        <img
+          src="assets/pizzzzza.png"
+          alt="Слайс пиццы"
+          class="h-full w-full object-contain object-left"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<p-dialog
+  header="Данные успешно отправлены"
+  [modal]="true"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+  [style]="{ width: '50vw' }"
+  [draggable]="false"
+  [resizable]="false"
+  [(visible)]="isSubmitted"
+>
+  <p>Имя: {{orderForm.controls.name.value}}</p>
+  <p>Адрес: {{orderForm.controls.address.value}}</p>
+  <p>Телефон: {{orderForm.controls.phone.value}}</p>
+</p-dialog>

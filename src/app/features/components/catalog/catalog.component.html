@@ -1,0 +1,16 @@
+<section class="px-4 pb-3">
+  <div class="max-w-[1200px] mx-auto">
+    <h2
+      class="text-[35px] font-muller font-bold leading-normal text-center text-pizza-brown-sand mb-14"
+    >
+      Выберите свою любимую пиццу
+    </h2>
+
+    <!-- Catalog grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-6">
+      @for (pizza of pizzas(); track pizza.id) {
+        <app-card [pizza]="pizza" />
+      }
+    </div>
+  </div>
+</section>

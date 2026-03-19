@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+@import 'tailwindcss-primeui';
+@import 'primeicons/primeicons.css';
+
+@font-face {
+  font-family: Muller;
+  src: url('/fonts/Muller-Trial-Regular.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Muller;
+  src: url('/fonts/Muller-Trial-Bold.ttf') format('truetype');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Muller;
+  src: url('/fonts/Muller-Trial-ExtraBold.ttf') format('truetype');
+  font-weight: 800; /* ExtraBold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Muller;
+  src: url('/fonts/Muller-Trial-Black.ttf') format('truetype');
+  font-weight: 900; /* Black */
+  font-style: normal;
+}
+
+@theme {
+  --font-muller: "Muller", ui-sans-serif, system-ui, sans-serif;
+  /* Orange */
+  --color-pizza-orange-light: rgb(255, 196, 104);
+  --color-pizza-orange: rgb(255, 175, 24);
+  --color-pizza-orange-dark: rgb(164, 107, 0);
+
+  /* Brown */
+  --color-pizza-brown-light: rgb(203, 168, 110);
+  --color-pizza-brown: rgb(185, 145, 80);
+  --color-pizza-brown-sand: rgb(189, 152, 92);
+
+  /* Dark */
+  --color-pizza-dark-warm: rgb(56, 36, 0);
+  --color-pizza-dark-graphite: rgb(24, 26, 26);
+  --color-pizza-dark-deep: rgb(2, 3, 3);
+
+  --text-pizza-h1: 1.875rem;
+  --text-pizza-h1--line-height: 1.2;
+  --text-pizza-h1--font-weight: 700;
+}
